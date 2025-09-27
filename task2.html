@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Shop Vehicle Database</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-2xl font-bold mb-6">Car Shop Vehicle Database</h1>
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+            <h2 class="text-xl font-semibold mb-4">Add Vehicle</h2>
+            <div class="grid gap-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Vehicle Type</label>
+                    <select id="vehicleType" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
+                        <option value="car">Car</option>
+                        <option value="truck">Truck</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Brand</label>
+                    <input type="text" id="brand" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" placeholder="e.g., Toyota">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Model</label>
+                    <input type="text" id="model" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" placeholder="e.g., Camry">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Year</label>
+                    <input type="number" id="year" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" placeholder="e.g., 2020">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Description (Optional)</label>
+                    <input type="text" id="description" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" placeholder="e.g., Sedan">
+                </div>
+                <div id="truckFields" class="hidden">
+                    <label class="block text-sm font-medium text-gray-700">Payload Capacity (tons)</label>
+                    <input type="number" id="payloadCapacity" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" placeholder="e.g., 2.5" step="0.1">
+                </div>
+                <button onclick="addVehicle()" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Add Vehicle</button>
+            </div>
+            <p id="error" class="text-red-500 mt-2 hidden"></p>
+        </div>
+
+
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold mb-4">Vehicle Records</h2>
+            <table class="w-full border-collapse">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="border p-2">ID</th>
+                        <th class="border p-2">Type</th>
+                        <th class="border p-2">Brand</th>
+                        <th class="border p-2">Model</th>
+                        <th class="border p-2">Year</th>
+                        <th class="border p-2">Description</th>
+                    </tr>
+                </thead>
+                <tbody id="vehicleTable"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="./task2.js"></script>
+</body>
+</html>
